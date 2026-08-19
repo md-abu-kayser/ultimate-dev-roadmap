@@ -1,6 +1,18 @@
-# Assets
+# Full-Stack Request Flow
 
-Store diagrams, screenshots, and learning visuals here.
+```mermaid
+sequenceDiagram
+  participant B as Browser
+  participant W as Web App
+  participant A as API
+  participant D as Database
+  B->>W: Request page
+  W->>A: Fetch data
+  A->>D: Query
+  D-->>A: Result
+  A-->>W: JSON
+  W-->>B: Render UI
+```
 
 ## Deep Dive
 
@@ -59,3 +71,14 @@ Explain the topic to someone who knows programming basics but has never used thi
 ## Professional deliverable
 
 Create a small artifact that demonstrates this skill and publish a README describing **problem → approach → trade-offs → verification → limitations**.
+
+---
+
+## Diagram Reading Guide
+
+Use this diagram as a reasoning artifact, not decoration. For every arrow, identify what crosses the boundary, what can fail, and what evidence would prove the interaction works.
+
+### Exercise
+
+Redraw the diagram from memory, annotate one latency boundary, one security boundary, one data boundary, and one recovery path.
+
